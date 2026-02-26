@@ -1,0 +1,24 @@
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\bin\Debug\net8.0-windows\Numeros Pseudoaleatorios.exe
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\bin\Debug\net8.0-windows\Numeros Pseudoaleatorios.deps.json
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\bin\Debug\net8.0-windows\Numeros Pseudoaleatorios.runtimeconfig.json
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\bin\Debug\net8.0-windows\Numeros Pseudoaleatorios.dll
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\bin\Debug\net8.0-windows\Numeros Pseudoaleatorios.pdb
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.CuadradosMedios.resources
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.Form1.resources
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros Pseudoaleatorios.csproj.GenerateResource.cache
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros Pseudoaleatorios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros Pseudoaleatorios.AssemblyInfoInputs.cache
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros Pseudoaleatorios.AssemblyInfo.cs
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros Pseudoaleatorios.csproj.CoreCompileInputs.cache
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros Pseudoaleatorios.dll
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\refint\Numeros Pseudoaleatorios.dll
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros Pseudoaleatorios.pdb
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros Pseudoaleatorios.genruntimeconfig.cache
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\ref\Numeros Pseudoaleatorios.dll
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.ProductosMedios.resources
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.ProductosMediosModificados.resources
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.Neumann.resources
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.Congruencial.resources
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.CongruencialAditivo.resources
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.CongruencialMultiplicativo.resources
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.Montecarlo.resources
