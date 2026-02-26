@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\productosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:productosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|c:\\users\\sergi\\source\\repos\\numeros pseudoaleatorios\\productosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:productosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\productosmediosmodificados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:productosmediosmodificados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -19,16 +11,24 @@
       "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:productosmediosmodificados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|c:\\users\\sergi\\source\\repos\\numeros pseudoaleatorios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\cuadradosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:cuadradosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|c:\\users\\sergi\\source\\repos\\numeros pseudoaleatorios\\cuadradosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:cuadradosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\cuadradosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:cuadradosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|c:\\users\\sergi\\source\\repos\\numeros pseudoaleatorios\\productosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:productosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|c:\\users\\sergi\\source\\repos\\numeros pseudoaleatorios\\productosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|solutionrelative:productosmedios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F1EA177-C781-4241-8F76-BD2D8BC45CE9}|Numeros Pseudoaleatorios.csproj|C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\congruencialmultiplicativo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -82,7 +82,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
@@ -206,20 +206,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ProductosMediosModificados.cs",
               "DocumentMoniker": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\ProductosMediosModificados.cs",
               "RelativeDocumentMoniker": "ProductosMediosModificados.cs",
               "ToolTip": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\ProductosMediosModificados.cs",
               "RelativeToolTip": "ProductosMediosModificados.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwB8AAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-25T02:07:41.857Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ProductosMediosModificados.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\ProductosMediosModificados.cs",
               "RelativeDocumentMoniker": "ProductosMediosModificados.cs",
@@ -231,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "ProductosMedios.cs",
               "DocumentMoniker": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\ProductosMedios.cs",
               "RelativeDocumentMoniker": "ProductosMedios.cs",
@@ -244,32 +244,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductosMedios.cs [Dise\u00F1o]",
+              "DocumentIndex": 5,
+              "Title": "ProductosMedios.cs [Design]",
               "DocumentMoniker": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\ProductosMedios.cs",
               "RelativeDocumentMoniker": "ProductosMedios.cs",
-              "ToolTip": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\ProductosMedios.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ProductosMedios.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\ProductosMedios.cs [Design]",
+              "RelativeToolTip": "ProductosMedios.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-25T02:07:34.367Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "CuadradosMedios.cs",
               "DocumentMoniker": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\CuadradosMedios.cs",
               "RelativeDocumentMoniker": "CuadradosMedios.cs",
               "ToolTip": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\CuadradosMedios.cs",
               "RelativeToolTip": "CuadradosMedios.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwEEAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-25T02:07:29.957Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "CuadradosMedios.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\sergi\\source\\repos\\Numeros Pseudoaleatorios\\CuadradosMedios.cs",
               "RelativeDocumentMoniker": "CuadradosMedios.cs",

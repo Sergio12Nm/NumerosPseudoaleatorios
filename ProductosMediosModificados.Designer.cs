@@ -28,24 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtSemilla2 = new TextBox();
+            txtK = new TextBox();
             label3 = new Label();
             dgvResultados = new DataGridView();
             btnGenerar = new Button();
-            txtSemilla1 = new TextBox();
+            txtSemilla = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            txtSemilla3 = new TextBox();
-            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvResultados).BeginInit();
             SuspendLayout();
             // 
-            // txtSemilla2
+            // txtK
             // 
-            txtSemilla2.Location = new Point(226, 109);
-            txtSemilla2.Name = "txtSemilla2";
-            txtSemilla2.Size = new Size(150, 27);
-            txtSemilla2.TabIndex = 18;
+            txtK.Location = new Point(226, 109);
+            txtK.Name = "txtK";
+            txtK.Size = new Size(150, 27);
+            txtK.TabIndex = 18;
             // 
             // label3
             // 
@@ -60,10 +58,10 @@
             // dgvResultados
             // 
             dgvResultados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResultados.Location = new Point(28, 191);
+            dgvResultados.Location = new Point(28, 156);
             dgvResultados.Name = "dgvResultados";
             dgvResultados.RowHeadersWidth = 51;
-            dgvResultados.Size = new Size(587, 350);
+            dgvResultados.Size = new Size(587, 385);
             dgvResultados.TabIndex = 16;
             // 
             // btnGenerar
@@ -71,7 +69,7 @@
             btnGenerar.BackColor = Color.MediumSeaGreen;
             btnGenerar.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGenerar.ForeColor = Color.White;
-            btnGenerar.Location = new Point(432, 94);
+            btnGenerar.Location = new Point(432, 76);
             btnGenerar.Name = "btnGenerar";
             btnGenerar.Size = new Size(137, 56);
             btnGenerar.TabIndex = 15;
@@ -79,12 +77,12 @@
             btnGenerar.UseVisualStyleBackColor = false;
             btnGenerar.Click += btnGenerar_Click;
             // 
-            // txtSemilla1
+            // txtSemilla
             // 
-            txtSemilla1.Location = new Point(226, 76);
-            txtSemilla1.Name = "txtSemilla1";
-            txtSemilla1.Size = new Size(150, 27);
-            txtSemilla1.TabIndex = 14;
+            txtSemilla.Location = new Point(226, 76);
+            txtSemilla.Name = "txtSemilla";
+            txtSemilla.Size = new Size(150, 27);
+            txtSemilla.TabIndex = 14;
             // 
             // label2
             // 
@@ -107,36 +105,17 @@
             label1.TabIndex = 12;
             label1.Text = "Método de Productos Medios Modificados";
             // 
-            // txtSemilla3
-            // 
-            txtSemilla3.Location = new Point(226, 142);
-            txtSemilla3.Name = "txtSemilla3";
-            txtSemilla3.Size = new Size(150, 27);
-            txtSemilla3.TabIndex = 20;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(28, 145);
-            label4.Name = "label4";
-            label4.Size = new Size(192, 20);
-            label4.TabIndex = 19;
-            label4.Text = "Ingrese semilla 3 (4 dígitos)";
-            // 
             // ProductosMediosModificados
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(642, 563);
-            Controls.Add(txtSemilla3);
-            Controls.Add(label4);
-            Controls.Add(txtSemilla2);
+            Controls.Add(txtK);
             Controls.Add(label3);
             Controls.Add(dgvResultados);
             Controls.Add(btnGenerar);
-            Controls.Add(txtSemilla1);
+            Controls.Add(txtSemilla);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "ProductosMediosModificados";
@@ -148,14 +127,12 @@
 
         #endregion
 
-        private TextBox txtSemilla2;
+        private TextBox txtK;
         private Label label3;
         private DataGridView dgvResultados;
         private Button btnGenerar;
-        private TextBox txtSemilla1;
+        private TextBox txtSemilla;
         private Label label2;
         private Label label1;
-        private TextBox txtSemilla3;
-        private Label label4;
     }
 }

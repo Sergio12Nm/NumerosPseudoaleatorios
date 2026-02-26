@@ -19,50 +19,82 @@ namespace Numeros_Pseudoaleatorios
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            dgvResultados.AllowUserToAddRows = false;
-            dgvResultados.ReadOnly = true;
-            dgvResultados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            dgvResultados.Rows.Clear();
+            // Limpiar tabla
             dgvResultados.Columns.Clear();
+            dgvResultados.Rows.Clear();
 
             dgvResultados.Columns.Add("Iteracion", "Iteración");
-            dgvResultados.Columns.Add("Xn_2", "X(n-2)");
-            dgvResultados.Columns.Add("Xn_1", "X(n-1)");
-            dgvResultados.Columns.Add("Producto", "Producto");
-            dgvResultados.Columns.Add("Central", "Número Central");
+            dgvResultados.Columns.Add("K", "K");
+            dgvResultados.Columns.Add("Xn", "Xn");
+            dgvResultados.Columns.Add("Producto", "K * Xn");
+            dgvResultados.Columns.Add("Centro", "Centro");
+            dgvResultados.Columns.Add("R", "R");
 
-            int x0, x1, x2;
+            // Quitar autoajuste para usar anchos fijos OPCIONAL
+            dgvResultados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
-            if (!int.TryParse(txtSemilla1.Text, out x0) ||
-                !int.TryParse(txtSemilla2.Text, out x1) ||
-                !int.TryParse(txtSemilla3.Text, out x2))
+            // Ajustar ancho manual para mejor visualización OPCIONAL
+            dgvResultados.Columns["Iteracion"].Width = 85;
+            dgvResultados.Columns["K"].Width = 85;
+            dgvResultados.Columns["Xn"].Width = 85;
+            dgvResultados.Columns["Producto"].Width = 85;
+            dgvResultados.Columns["Centro"].Width = 85;
+            dgvResultados.Columns["R"].Width = 85;
+
+            // Centrar texto
+            foreach (DataGridViewColumn col in dgvResultados.Columns)
             {
-                MessageBox.Show("Ingrese semillas válidas de 4 dígitos");
+                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            // Validar semilla
+            if (!int.TryParse(txtSemilla.Text, out int semilla))
+            {
+                MessageBox.Show("Ingrese una semilla válida (solo números).");
                 return;
             }
 
+            if (txtSemilla.Text.Length != 2)
+            {
+                MessageBox.Show("La semilla debe tener exactamente 2 dígitos.");
+                return;
+            }
+
+            // Validar K
+            if (!int.TryParse(txtK.Text, out int K))
+            {
+                MessageBox.Show("Ingrese un valor válido para K.");
+                return;
+            }
+
+            int Xn = semilla;
+
             for (int i = 1; i <= 30; i++)
             {
-                long producto = (long)x1 * x2;
+                int producto = K * Xn;
 
-                // Convertir a 8 dígitos con ceros
-                string productoStr = producto.ToString("D8");
+                // Convertir a 4 dígitos con ceros a la izquierda
+                string productoStr = producto.ToString("D4");
 
-                // Extraer 4 centrales
-                string centralStr = productoStr.Substring(2, 4);
+                // Tomar los 2 dígitos centrales
+                string centroStr = productoStr.Substring(1, 2);
 
-                int nuevo = int.Parse(centralStr);
+                int centro = int.Parse(centroStr);
 
-                dgvResultados.Rows.Add(i, x1, x2, productoStr, centralStr);
+                double R = centro / 100.0;
 
-                // Desplazamiento
-                x0 = x1;
-                x1 = x2;
-                x2 = nuevo;
+                dgvResultados.Rows.Add(
+                    i,
+                    K,
+                    Xn.ToString("D2"),
+                    productoStr,
+                    centroStr,
+                    R.ToString("0.00")
+                );
 
-                if (x2 == 0)
-                    break;
+                // Actualizar semilla
+                Xn = centro;
             }
         }
     }

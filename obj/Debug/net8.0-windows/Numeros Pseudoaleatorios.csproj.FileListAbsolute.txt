@@ -22,3 +22,4 @@ C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Nu
 C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.CongruencialAditivo.resources
 C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.CongruencialMultiplicativo.resources
 C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros_Pseudoaleatorios.Montecarlo.resources
+C:\Users\sergi\source\repos\Numeros Pseudoaleatorios\obj\Debug\net8.0-windows\Numeros Pseudoaleatorios.sourcelink.json
