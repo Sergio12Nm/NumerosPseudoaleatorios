@@ -37,12 +37,18 @@
             txtSemilla1 = new TextBox();
             label2 = new Label();
             label1 = new Label();
+            txtSemilla3 = new TextBox();
+            label5 = new Label();
+            txtSemilla4 = new TextBox();
+            label6 = new Label();
+            txtSemilla5 = new TextBox();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvResultados).BeginInit();
             SuspendLayout();
             // 
             // txtModulo
             // 
-            txtModulo.Location = new Point(227, 141);
+            txtModulo.Location = new Point(430, 197);
             txtModulo.Name = "txtModulo";
             txtModulo.Size = new Size(150, 27);
             txtModulo.TabIndex = 29;
@@ -51,7 +57,7 @@
             // 
             label4.AutoSize = true;
             label4.ForeColor = Color.White;
-            label4.Location = new Point(29, 144);
+            label4.Location = new Point(472, 174);
             label4.Name = "label4";
             label4.Size = new Size(61, 20);
             label4.TabIndex = 28;
@@ -77,10 +83,10 @@
             // dgvResultados
             // 
             dgvResultados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResultados.Location = new Point(29, 190);
+            dgvResultados.Location = new Point(29, 253);
             dgvResultados.Name = "dgvResultados";
             dgvResultados.RowHeadersWidth = 51;
-            dgvResultados.Size = new Size(587, 350);
+            dgvResultados.Size = new Size(587, 287);
             dgvResultados.TabIndex = 25;
             // 
             // btnGenerar
@@ -124,12 +130,69 @@
             label1.TabIndex = 21;
             label1.Text = "Método Congruencial Aditivo";
             // 
+            // txtSemilla3
+            // 
+            txtSemilla3.Location = new Point(227, 141);
+            txtSemilla3.Name = "txtSemilla3";
+            txtSemilla3.Size = new Size(150, 27);
+            txtSemilla3.TabIndex = 31;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(29, 144);
+            label5.Name = "label5";
+            label5.Size = new Size(120, 20);
+            label5.TabIndex = 30;
+            label5.Text = "Ingrese semilla 3";
+            // 
+            // txtSemilla4
+            // 
+            txtSemilla4.Location = new Point(227, 174);
+            txtSemilla4.Name = "txtSemilla4";
+            txtSemilla4.Size = new Size(150, 27);
+            txtSemilla4.TabIndex = 33;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(29, 177);
+            label6.Name = "label6";
+            label6.Size = new Size(120, 20);
+            label6.TabIndex = 32;
+            label6.Text = "Ingrese semilla 4";
+            // 
+            // txtSemilla5
+            // 
+            txtSemilla5.Location = new Point(227, 207);
+            txtSemilla5.Name = "txtSemilla5";
+            txtSemilla5.Size = new Size(150, 27);
+            txtSemilla5.TabIndex = 35;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(29, 210);
+            label7.Name = "label7";
+            label7.Size = new Size(120, 20);
+            label7.TabIndex = 34;
+            label7.Text = "Ingrese semilla 5";
+            // 
             // CongruencialAditivo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(642, 563);
+            Controls.Add(txtSemilla5);
+            Controls.Add(label7);
+            Controls.Add(txtSemilla4);
+            Controls.Add(label6);
+            Controls.Add(txtSemilla3);
+            Controls.Add(label5);
             Controls.Add(txtModulo);
             Controls.Add(label4);
             Controls.Add(txtSemilla2);
@@ -157,5 +220,11 @@
         private TextBox txtSemilla1;
         private Label label2;
         private Label label1;
+        private TextBox txtSemilla3;
+        private Label label5;
+        private TextBox txtSemilla4;
+        private Label label6;
+        private TextBox txtSemilla5;
+        private Label label7;
     }
 }

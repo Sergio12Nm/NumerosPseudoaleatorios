@@ -15,60 +15,148 @@ namespace Numeros_Pseudoaleatorios
         public Montecarlo()
         {
             InitializeComponent();
+            dgvResultados.Columns.Clear();
+            dgvResultados.Columns.Add("Iteracion", "Iteración");
+            dgvResultados.Columns.Add("Monedas", "Resultado Monedas");
+            dgvResultados.Columns.Add("Dados", "Resultado Dados");
+
+            dgvResultados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            // Validar semilla
-            if (!int.TryParse(txtSemilla.Text, out int semilla))
+            dgvResultados.Rows.Clear();
+
+            if (!int.TryParse(txtMonedas.Text, out int numMonedas) ||
+                !int.TryParse(txtDados.Text, out int numDados))
             {
-                MessageBox.Show("Por favor ingrese una semilla válida (solo números).");
+                MessageBox.Show("Ingrese valores numéricos válidos");
                 return;
             }
 
-            // Limpiar tabla
-            dgvResultados.Columns.Clear();
-            dgvResultados.Rows.Clear();
+            Random rnd = new Random();
 
-            // Crear columnas
-            dgvResultados.Columns.Add("Iteracion", "Iteración");
-            dgvResultados.Columns.Add("X", "X");
-            dgvResultados.Columns.Add("Y", "Y");
-            dgvResultados.Columns.Add("DentroCirculo", "¿Dentro del círculo?");
-            dgvResultados.Columns.Add("PiEstimado", "π Estimado");
+            int totalCaras = 0;
+            int totalCruces = 0;
 
-            Random random = new Random(semilla);
+            int[] frecuenciaDados = new int[6];
 
-            int dentroCirculo = 0;
-            int total = 30;
-
-            for (int i = 1; i <= total; i++)
+            for (int i = 1; i <= 30; i++)
             {
-                double x = random.NextDouble();
-                double y = random.NextDouble();
+                string resultadoMonedas = "";
+                string resultadoDados = "";
 
-                double distancia = (x * x) + (y * y);
-
-                string dentro = "No";
-
-                if (distancia <= 1)
+                // 🪙 Simulación de Monedas
+                for (int m = 0; m < numMonedas; m++)
                 {
-                    dentroCirculo++;
-                    dentro = "Sí";
+                    double ri = rnd.NextDouble();
+
+                    if (ri <= 0.499)
+                    {
+                        resultadoMonedas += "C ";
+                        totalCaras++;
+                    }
+                    else
+                    {
+                        resultadoMonedas += "X ";
+                        totalCruces++;
+                    }
                 }
 
-                double piEstimado = 4.0 * dentroCirculo / i;
+                // 🎲 Simulación de Dados
+                for (int d = 0; d < numDados; d++)
+                {
+                    double ri = rnd.NextDouble();
+                    int caraDado = (int)(ri * 6) + 1;
 
-                dgvResultados.Rows.Add(i,
-                                        x.ToString("F4"),
-                                        y.ToString("F4"),
-                                        dentro,
-                                        piEstimado.ToString("F6"));
+                    resultadoDados += caraDado + " ";
+                    frecuenciaDados[caraDado - 1]++;
+                }
+
+                dgvResultados.Rows.Add(i, resultadoMonedas, resultadoDados);
             }
 
-            double piFinal = 4.0 * dentroCirculo / total;
+            // 📊 Resumen
+            /*
+             * // Totales
+            int totalMonedas = totalCaras + totalCruces;
+            int totalDados = frecuenciaDados.Sum();
 
-            lblPi.Text = "π aproximado = " + piFinal.ToString("F6");
+            string resumen = "===== MONEDAS =====\n\n";
+
+            double pTeoMoneda = 0.5;
+
+            // Cara
+            double pExpCara = (double)totalCaras / totalMonedas;
+            double errorCara = Math.Abs(pExpCara - pTeoMoneda);
+
+            resumen += "CARA\n";
+            resumen += "Frecuencia: " + totalCaras + "\n";
+            resumen += "P(exp): " + pExpCara.ToString("0.000") + "\n";
+            resumen += "P(teo): 0.500\n";
+            resumen += "Error: " + errorCara.ToString("0.000") + "\n\n";
+
+            // Cruz
+            double pExpCruz = (double)totalCruces / totalMonedas;
+            double errorCruz = Math.Abs(pExpCruz - pTeoMoneda);
+
+            resumen += "CRUZ\n";
+            resumen += "Frecuencia: " + totalCruces + "\n";
+            resumen += "P(exp): " + pExpCruz.ToString("0.000") + "\n";
+            resumen += "P(teo): 0.500\n";
+            resumen += "Error: " + errorCruz.ToString("0.000") + "\n\n";
+
+            resumen += "===== DADOS =====\n\n";
+
+            double pTeoDado = 1.0 / 6.0;
+
+            for (int i = 0; i < 6; i++)
+            {
+                double pExp = (double)frecuenciaDados[i] / totalDados;
+                double error = Math.Abs(pExp - pTeoDado);
+
+                resumen += "Cara " + (i + 1) + "\n";
+                resumen += "Frecuencia: " + frecuenciaDados[i] + "\n";
+                resumen += "P(exp): " + pExp.ToString("0.000") + "\n";
+                resumen += "P(teo): " + pTeoDado.ToString("0.000") + "\n";
+                resumen += "Error: " + error.ToString("0.000") + "\n\n";
+            }
+
+            lblResumen.Text = resumen; */
+            int totalMonedas = totalCaras + totalCruces;
+            int totalDados = frecuenciaDados.Sum();
+
+            string resumen = "MONEDAS\n";
+            resumen += "Evento   Freq   P(exp)   P(teo)   Error\n";
+
+            double pTeoMoneda = 0.5;
+
+            // Cara
+            double pExpCara = (double)totalCaras / totalMonedas;
+            double errorCara = Math.Abs(pExpCara - pTeoMoneda);
+
+            resumen += $"Cara     {totalCaras,4}   {pExpCara:0.000}    0.500    {errorCara:0.000}\n";
+
+            // Cruz
+            double pExpCruz = (double)totalCruces / totalMonedas;
+            double errorCruz = Math.Abs(pExpCruz - pTeoMoneda);
+
+            resumen += $"Cruz     {totalCruces,4}   {pExpCruz:0.000}    0.500    {errorCruz:0.000}\n\n";
+
+            resumen += "DADOS\n";
+            resumen += "Cara   Freq   P(exp)   P(teo)   Error\n";
+
+            double pTeoDado = 1.0 / 6.0;
+
+            for (int i = 0; i < 6; i++)
+            {
+                double pExp = (double)frecuenciaDados[i] / totalDados;
+                double error = Math.Abs(pExp - pTeoDado);
+
+                resumen += $"{i + 1}      {frecuenciaDados[i],4}   {pExp:0.000}    {pTeoDado:0.000}    {error:0.000}\n";
+            }
+
+            lblResumen.Text = resumen;
         }
     }
 }

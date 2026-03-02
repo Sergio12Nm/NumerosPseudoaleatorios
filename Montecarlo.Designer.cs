@@ -29,60 +29,63 @@
         private void InitializeComponent()
         {
             dgvResultados = new DataGridView();
-            btnGenerar = new Button();
-            txtSemilla = new TextBox();
+            btnSimular = new Button();
+            txtMonedas = new TextBox();
             label2 = new Label();
             label1 = new Label();
             lblPi = new Label();
+            txtDados = new TextBox();
+            label3 = new Label();
+            lblResumen = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvResultados).BeginInit();
             SuspendLayout();
             // 
             // dgvResultados
             // 
             dgvResultados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResultados.Location = new Point(28, 172);
+            dgvResultados.Location = new Point(12, 161);
             dgvResultados.Name = "dgvResultados";
             dgvResultados.RowHeadersWidth = 51;
-            dgvResultados.Size = new Size(587, 374);
+            dgvResultados.Size = new Size(404, 390);
             dgvResultados.TabIndex = 9;
             // 
-            // btnGenerar
+            // btnSimular
             // 
-            btnGenerar.BackColor = Color.MediumSeaGreen;
-            btnGenerar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGenerar.ForeColor = Color.White;
-            btnGenerar.Location = new Point(432, 66);
-            btnGenerar.Name = "btnGenerar";
-            btnGenerar.Size = new Size(137, 56);
-            btnGenerar.TabIndex = 8;
-            btnGenerar.Text = "Generar";
-            btnGenerar.UseVisualStyleBackColor = false;
-            btnGenerar.Click += btnGenerar_Click;
+            btnSimular.BackColor = Color.MediumSeaGreen;
+            btnSimular.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSimular.ForeColor = Color.White;
+            btnSimular.Location = new Point(432, 66);
+            btnSimular.Name = "btnSimular";
+            btnSimular.Size = new Size(137, 56);
+            btnSimular.TabIndex = 8;
+            btnSimular.Text = "Simular";
+            btnSimular.UseVisualStyleBackColor = false;
+            btnSimular.Click += btnGenerar_Click;
             // 
-            // txtSemilla
+            // txtMonedas
             // 
-            txtSemilla.Location = new Point(214, 81);
-            txtSemilla.Name = "txtSemilla";
-            txtSemilla.Size = new Size(150, 27);
-            txtSemilla.TabIndex = 7;
+            txtMonedas.Location = new Point(214, 70);
+            txtMonedas.Name = "txtMonedas";
+            txtMonedas.Size = new Size(150, 27);
+            txtMonedas.TabIndex = 7;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(28, 84);
+            label2.Location = new Point(28, 73);
             label2.Name = "label2";
-            label2.Size = new Size(108, 20);
+            label2.Size = new Size(70, 20);
             label2.TabIndex = 6;
-            label2.Text = "Ingrese semilla";
+            label2.Text = "Monedas";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Pusab", 19.7999973F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(113, 18);
+            label1.Location = new Point(143, 18);
             label1.Name = "label1";
             label1.Size = new Size(409, 36);
             label1.TabIndex = 5;
@@ -98,16 +101,47 @@
             lblPi.Size = new Size(0, 20);
             lblPi.TabIndex = 10;
             // 
+            // txtDados
+            // 
+            txtDados.Location = new Point(214, 103);
+            txtDados.Name = "txtDados";
+            txtDados.Size = new Size(150, 27);
+            txtDados.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(28, 106);
+            label3.Name = "label3";
+            label3.Size = new Size(52, 20);
+            label3.TabIndex = 11;
+            label3.Text = "Dados";
+            // 
+            // lblResumen
+            // 
+            lblResumen.AutoSize = true;
+            lblResumen.ForeColor = Color.White;
+            lblResumen.Location = new Point(432, 161);
+            lblResumen.Name = "lblResumen";
+            lblResumen.Size = new Size(69, 20);
+            lblResumen.TabIndex = 13;
+            lblResumen.Text = "Resumen";
+            // 
             // Montecarlo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
-            ClientSize = new Size(642, 563);
+            ClientSize = new Size(702, 563);
+            Controls.Add(lblResumen);
+            Controls.Add(txtDados);
+            Controls.Add(label3);
             Controls.Add(lblPi);
             Controls.Add(dgvResultados);
-            Controls.Add(btnGenerar);
-            Controls.Add(txtSemilla);
+            Controls.Add(btnSimular);
+            Controls.Add(txtMonedas);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Montecarlo";
@@ -120,10 +154,13 @@
         #endregion
 
         private DataGridView dgvResultados;
-        private Button btnGenerar;
-        private TextBox txtSemilla;
+        private Button btnSimular;
+        private TextBox txtMonedas;
         private Label label2;
         private Label label1;
         private Label lblPi;
+        private TextBox txtDados;
+        private Label label3;
+        private Label lblResumen;
     }
 }

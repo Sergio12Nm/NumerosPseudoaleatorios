@@ -20,44 +20,44 @@ namespace Numeros_Pseudoaleatorios
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             dgvResultados.Columns.Clear();
+            dgvResultados.Columns.Add("Iteracion", "Iteración");
+            dgvResultados.Columns.Add("Xi", "Xi");
+            dgvResultados.Columns.Add("Cuadrado", "Xi²");
+            dgvResultados.Columns.Add("Central", "5 Centrales");
+            dgvResultados.Columns.Add("Ri", "Ri");
+            dgvResultados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvResultados.Rows.Clear();
 
-            dgvResultados.Columns.Add("Iteracion", "Iteración");
-            dgvResultados.Columns.Add("Semilla", "Semilla");
-            dgvResultados.Columns.Add("Cuadrado", "Cuadrado");
-            dgvResultados.Columns.Add("NuevoValor", "Nuevo Valor");
+            string semillaTexto = txtSemilla.Text.Trim();
 
-            if (!int.TryParse(txtSemilla.Text, out int semilla))
+            if (semillaTexto.Length != 10 || !long.TryParse(semillaTexto, out long Xi))
             {
-                MessageBox.Show("Ingrese un número válido.");
-                return;
-            }
-
-            if (semilla < 1000 || semilla > 9999)
-            {
-                MessageBox.Show("La semilla debe ser de 4 dígitos.");
+                MessageBox.Show("Ingrese una semilla numérica de EXACTAMENTE 10 dígitos.");
                 return;
             }
 
             for (int i = 1; i <= 30; i++)
             {
-                long cuadrado = (long)semilla * semilla;
+                long cuadrado = Xi * Xi;
 
-                string cuadradoStr = cuadrado.ToString("D8");
+                int longitudCuadrado = (i == 1) ? 20 : 10;
+                string cuadradoStr = cuadrado.ToString().PadLeft(longitudCuadrado, '0');
 
-                string centrales = cuadradoStr.Substring(2, 4);
+                // ✅ CORRECCIÓN: i==1 usa 20 dígitos → inicio=8 | i>1 usa 10 dígitos → inicio=2
+                int inicio = (i == 1) ? 8 : 2;
+                string centrales = cuadradoStr.Substring(inicio, 5);
 
-                int nuevoValor = int.Parse(centrales);
+                double Ri = long.Parse(centrales) / 100000.0;
 
-                dgvResultados.Rows.Add(i, semilla, cuadradoStr, nuevoValor);
+                dgvResultados.Rows.Add(
+                    i,
+                    Xi.ToString().PadLeft(i == 1 ? 10 : 5, '0'),
+                    cuadradoStr,
+                    centrales,
+                    Ri.ToString("0.00000")
+                );
 
-                semilla = nuevoValor;
-
-                if (semilla == 0)
-                {
-                    MessageBox.Show("El proceso se detuvo porque llegó a 0.");
-                    break;
-                }
+                Xi = long.Parse(centrales);
             }
         }
     }

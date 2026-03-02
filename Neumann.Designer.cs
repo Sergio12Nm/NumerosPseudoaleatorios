@@ -72,9 +72,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(28, 84);
             label2.Name = "label2";
-            label2.Size = new Size(180, 20);
+            label2.Size = new Size(188, 20);
             label2.TabIndex = 6;
-            label2.Text = "Ingrese semilla (4 dígitos)";
+            label2.Text = "Ingrese semilla (10 dígitos)";
             // 
             // label1
             // 

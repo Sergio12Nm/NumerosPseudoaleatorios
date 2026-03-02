@@ -19,56 +19,63 @@ namespace Numeros_Pseudoaleatorios
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            dgvResultados.ColumnCount = 3;
-
-            dgvResultados.Columns[0].Name = "Iteración";
-            dgvResultados.Columns[1].Name = "Xn";
-            dgvResultados.Columns[2].Name = "Ri";
-
-            dgvResultados.AllowUserToAddRows = false;
-            dgvResultados.ReadOnly = true;
-
             dgvResultados.Rows.Clear();
 
-            bool semilla1Valida = int.TryParse(txtSemilla1.Text, out int x0);
-            bool semilla2Valida = int.TryParse(txtSemilla2.Text, out int x1);
-            bool moduloValido = int.TryParse(txtModulo.Text, out int m);
+            dgvResultados.Columns.Add("colXi", "Xi");
+            dgvResultados.Columns.Add("colValor", "Valor Xi");
+            dgvResultados.Columns.Add("colRi", "ri");
 
-            if (!semilla1Valida || !semilla2Valida || !moduloValido)
+            dgvResultados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            int n = 5;               // Cantidad de semillas
+            int cantidadGenerar = 30; // Cantidad de números a generar
+
+            List<int> lista = new List<int>();
+
+            // Validar semillas
+            if (!int.TryParse(txtSemilla1.Text, out int x1) ||
+                !int.TryParse(txtSemilla2.Text, out int x2) ||
+                !int.TryParse(txtSemilla3.Text, out int x3) ||
+                !int.TryParse(txtSemilla4.Text, out int x4) ||
+                !int.TryParse(txtSemilla5.Text, out int x5))
             {
-                MessageBox.Show("Ingrese solo valores numéricos enteros.",
-                                "Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese correctamente las 5 semillas.");
                 return;
             }
 
-            if (m <= 0)
+            // Validar módulo
+            if (!int.TryParse(txtModulo.Text, out int m) || m <= 1)
             {
-                MessageBox.Show("El módulo debe ser mayor que 0.",
-                                "Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un módulo válido (mayor que 1).");
                 return;
             }
 
-            List<int> numeros = new List<int>();
+            // Agregar semillas iniciales
+            lista.Add(x1);
+            lista.Add(x2);
+            lista.Add(x3);
+            lista.Add(x4);
+            lista.Add(x5);
 
-            numeros.Add(x0);
-            numeros.Add(x1);
-
-            // Mostrar semillas iniciales
-            dgvResultados.Rows.Add(0, x0, ((double)x0 / m).ToString("F4"));
-            dgvResultados.Rows.Add(1, x1, ((double)x1 / m).ToString("F4"));
-
-            for (int i = 2; i < 30; i++)
+            // Generar números
+            for (int i = n; i < n + cantidadGenerar; i++)
             {
-                int xn = (numeros[i - 1] + numeros[i - 2]) % m;
-                numeros.Add(xn);
+                int xi_1 = lista[i - 1];
+                int xi_n = lista[i - n];
 
-                double ri = (double)xn / m;
+                int nuevo = (xi_1 + xi_n) % m;
 
-                dgvResultados.Rows.Add(i, xn, ri.ToString("F4"));
+                lista.Add(nuevo);
+
+                // double ri = (double)nuevo / (m - 1);
+                double riExacto = (double)nuevo / (m - 1);
+                double riTruncado = Math.Truncate(riExacto * 10000) / 10000;
+
+                dgvResultados.Rows.Add(
+                    "X" + (i + 1),
+                    nuevo.ToString("D2"),
+                    riTruncado.ToString("0.0000")
+                );
             }
         }
     }
