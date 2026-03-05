@@ -1,6 +1,6 @@
 ﻿namespace Numeros_Pseudoaleatorios
 {
-    partial class Form1
+    partial class Numeros
     {
         /// <summary>
         ///  Required designer variable.
@@ -171,7 +171,7 @@
             Controls.Add(btnProductosMedios);
             Controls.Add(btnCuadradosMedios);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Números";
             ResumeLayout(false);
             PerformLayout();
         }

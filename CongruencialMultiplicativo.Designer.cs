@@ -44,8 +44,18 @@
             dgvResultadosA5 = new DataGridView();
             label7 = new Label();
             label8 = new Label();
+            grpPruebas = new GroupBox();
+            btnPruebas3 = new Button();
+            btnPruebas5 = new Button();
+            lblPoker = new Label();
+            lblCorridas = new Label();
+            lblSeries = new Label();
+            lblFrecuencia = new Label();
+            lblVarianza = new Label();
+            lblMedias = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvResultadosA3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvResultadosA5).BeginInit();
+            grpPruebas.SuspendLayout();
             SuspendLayout();
             // 
             // dgvResultadosA3
@@ -54,7 +64,7 @@
             dgvResultadosA3.Location = new Point(28, 269);
             dgvResultadosA3.Name = "dgvResultadosA3";
             dgvResultadosA3.RowHeadersWidth = 51;
-            dgvResultadosA3.Size = new Size(285, 280);
+            dgvResultadosA3.Size = new Size(285, 322);
             dgvResultadosA3.TabIndex = 9;
             // 
             // btnGenerar
@@ -91,11 +101,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Pusab", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Pusab", 19.7999973F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(21, 18);
+            label1.Location = new Point(180, 20);
             label1.Name = "label1";
-            label1.Size = new Size(598, 33);
+            label1.Size = new Size(656, 36);
             label1.TabIndex = 5;
             label1.Text = "Método Congruencial Multiplicativo";
             // 
@@ -176,10 +186,10 @@
             // dgvResultadosA5
             // 
             dgvResultadosA5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResultadosA5.Location = new Point(334, 269);
+            dgvResultadosA5.Location = new Point(324, 269);
             dgvResultadosA5.Name = "dgvResultadosA5";
             dgvResultadosA5.RowHeadersWidth = 51;
-            dgvResultadosA5.Size = new Size(285, 280);
+            dgvResultadosA5.Size = new Size(285, 322);
             dgvResultadosA5.TabIndex = 18;
             // 
             // label7
@@ -196,18 +206,115 @@
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.White;
-            label8.Location = new Point(455, 246);
+            label8.Location = new Point(445, 246);
             label8.Name = "label8";
             label8.Size = new Size(42, 20);
             label8.TabIndex = 20;
             label8.Text = "5+8k";
+            // 
+            // grpPruebas
+            // 
+            grpPruebas.Controls.Add(btnPruebas3);
+            grpPruebas.Controls.Add(btnPruebas5);
+            grpPruebas.Controls.Add(lblPoker);
+            grpPruebas.Controls.Add(lblCorridas);
+            grpPruebas.Controls.Add(lblSeries);
+            grpPruebas.Controls.Add(lblFrecuencia);
+            grpPruebas.Controls.Add(lblVarianza);
+            grpPruebas.Controls.Add(lblMedias);
+            grpPruebas.ForeColor = Color.White;
+            grpPruebas.Location = new Point(617, 71);
+            grpPruebas.Name = "grpPruebas";
+            grpPruebas.Size = new Size(383, 520);
+            grpPruebas.TabIndex = 37;
+            grpPruebas.TabStop = false;
+            grpPruebas.Text = "Pruebas";
+            // 
+            // btnPruebas3
+            // 
+            btnPruebas3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPruebas3.ForeColor = Color.Black;
+            btnPruebas3.Location = new Point(194, 440);
+            btnPruebas3.Name = "btnPruebas3";
+            btnPruebas3.Size = new Size(170, 29);
+            btnPruebas3.TabIndex = 7;
+            btnPruebas3.Text = "Ejecutar Pruebas 3+8k";
+            btnPruebas3.UseVisualStyleBackColor = true;
+            btnPruebas3.Click += btnPruebas3_Click;
+            // 
+            // btnPruebas5
+            // 
+            btnPruebas5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPruebas5.ForeColor = Color.Black;
+            btnPruebas5.Location = new Point(194, 475);
+            btnPruebas5.Name = "btnPruebas5";
+            btnPruebas5.Size = new Size(170, 29);
+            btnPruebas5.TabIndex = 6;
+            btnPruebas5.Text = "Ejecutar Pruebas 5+8k";
+            btnPruebas5.UseVisualStyleBackColor = true;
+            btnPruebas5.Click += btnPruebas5_Click;
+            // 
+            // lblPoker
+            // 
+            lblPoker.AutoSize = true;
+            lblPoker.Location = new Point(12, 388);
+            lblPoker.Name = "lblPoker";
+            lblPoker.Size = new Size(45, 20);
+            lblPoker.TabIndex = 5;
+            lblPoker.Text = "Poker";
+            // 
+            // lblCorridas
+            // 
+            lblCorridas.AutoSize = true;
+            lblCorridas.Location = new Point(12, 311);
+            lblCorridas.Name = "lblCorridas";
+            lblCorridas.Size = new Size(64, 20);
+            lblCorridas.TabIndex = 4;
+            lblCorridas.Text = "Corridas";
+            // 
+            // lblSeries
+            // 
+            lblSeries.AutoSize = true;
+            lblSeries.Location = new Point(12, 254);
+            lblSeries.Name = "lblSeries";
+            lblSeries.Size = new Size(48, 20);
+            lblSeries.TabIndex = 3;
+            lblSeries.Text = "Series";
+            // 
+            // lblFrecuencia
+            // 
+            lblFrecuencia.AutoSize = true;
+            lblFrecuencia.Location = new Point(12, 177);
+            lblFrecuencia.Name = "lblFrecuencia";
+            lblFrecuencia.Size = new Size(79, 20);
+            lblFrecuencia.TabIndex = 2;
+            lblFrecuencia.Text = "Frecuencia";
+            // 
+            // lblVarianza
+            // 
+            lblVarianza.AutoSize = true;
+            lblVarianza.Location = new Point(12, 100);
+            lblVarianza.Name = "lblVarianza";
+            lblVarianza.Size = new Size(65, 20);
+            lblVarianza.TabIndex = 1;
+            lblVarianza.Text = "Varianza";
+            // 
+            // lblMedias
+            // 
+            lblMedias.AutoSize = true;
+            lblMedias.Location = new Point(12, 23);
+            lblMedias.Name = "lblMedias";
+            lblMedias.Size = new Size(57, 20);
+            lblMedias.TabIndex = 0;
+            lblMedias.Text = "Medias";
             // 
             // CongruencialMultiplicativo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
-            ClientSize = new Size(642, 563);
+            ClientSize = new Size(1012, 603);
+            Controls.Add(grpPruebas);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(dgvResultadosA5);
@@ -228,6 +335,8 @@
             Text = "CongruencialMultiplicativo";
             ((System.ComponentModel.ISupportInitialize)dgvResultadosA3).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvResultadosA5).EndInit();
+            grpPruebas.ResumeLayout(false);
+            grpPruebas.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -250,5 +359,14 @@
         private DataGridView dgvResultadosA5;
         private Label label7;
         private Label label8;
+        private GroupBox grpPruebas;
+        private Button btnPruebas5;
+        private Label lblPoker;
+        private Label lblCorridas;
+        private Label lblSeries;
+        private Label lblFrecuencia;
+        private Label lblVarianza;
+        private Label lblMedias;
+        private Button btnPruebas3;
     }
 }

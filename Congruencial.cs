@@ -12,6 +12,11 @@ namespace Numeros_Pseudoaleatorios
 {
     public partial class Congruencial : Form
     {
+        // ====================================
+        // LISTA PARA PRUEBAS ESTADÍSTICAS
+        // ====================================
+        List<double> listaNumeros = new List<double>();
+
         public Congruencial()
         {
             InitializeComponent();
@@ -23,6 +28,9 @@ namespace Numeros_Pseudoaleatorios
             dgvResultados.Columns.Clear();
             dgvResultados.Rows.Clear();
 
+            // LIMPIAR LISTA
+            listaNumeros.Clear();
+
             // Crear columnas dinámicamente
             dgvResultados.Columns.Add("Iteracion", "Iteración");
             dgvResultados.Columns.Add("Xn", "Xn");
@@ -30,7 +38,6 @@ namespace Numeros_Pseudoaleatorios
 
             int X, a, c, m;
 
-            // Validar Semilla
             if (!int.TryParse(txtSemilla.Text, out X))
             {
                 MessageBox.Show("Ingrese una semilla válida (solo números).");
@@ -38,7 +45,6 @@ namespace Numeros_Pseudoaleatorios
                 return;
             }
 
-            // Validar multiplicador
             if (!int.TryParse(txtA.Text, out a))
             {
                 MessageBox.Show("Ingrese un multiplicador válido (a).");
@@ -46,7 +52,6 @@ namespace Numeros_Pseudoaleatorios
                 return;
             }
 
-            // Validar incremento
             if (!int.TryParse(txtC.Text, out c))
             {
                 MessageBox.Show("Ingrese un incremento válido (c).");
@@ -54,7 +59,6 @@ namespace Numeros_Pseudoaleatorios
                 return;
             }
 
-            // Validar módulo
             if (!int.TryParse(txtM.Text, out m) || m <= 0)
             {
                 MessageBox.Show("Ingrese un módulo válido mayor que 0.");
@@ -69,7 +73,31 @@ namespace Numeros_Pseudoaleatorios
                 double r = (double)X / m;
 
                 dgvResultados.Rows.Add(i, X, r.ToString("F4"));
+
+                // ====================================
+                // GUARDAR r PARA PRUEBAS
+                // ====================================
+                listaNumeros.Add(r);
             }
+        }
+
+        // ====================================
+        // BOTÓN EJECUTAR PRUEBAS
+        // ====================================
+        private void btnPruebas_Click(object sender, EventArgs e)
+        {
+            if (listaNumeros.Count == 0)
+            {
+                MessageBox.Show("Primero genere números.");
+                return;
+            }
+
+            lblMedias.Text = PruebasEstadisticas.Medios(listaNumeros);
+            lblVarianza.Text = PruebasEstadisticas.Varianza(listaNumeros);
+            lblFrecuencia.Text = PruebasEstadisticas.Frecuencia(listaNumeros);
+            lblSeries.Text = PruebasEstadisticas.Series(listaNumeros);
+            lblCorridas.Text = PruebasEstadisticas.Corridas(listaNumeros);
+            lblPoker.Text = PruebasEstadisticas.Poker(listaNumeros);
         }
     }
 }

@@ -12,6 +12,12 @@ namespace Numeros_Pseudoaleatorios
 {
     public partial class CongruencialMultiplicativo : Form
     {
+        // ====================================
+        // LISTAS PARA PRUEBAS (UNA POR TABLA)
+        // ====================================
+        List<double> listaA3 = new List<double>();
+        List<double> listaA5 = new List<double>();
+
         public CongruencialMultiplicativo()
         {
             InitializeComponent();
@@ -44,6 +50,10 @@ namespace Numeros_Pseudoaleatorios
             txtPeriodo1.Clear();
             txtPeriodo2.Clear();
 
+            // LIMPIAR LISTAS
+            listaA3.Clear();
+            listaA5.Clear();
+
             if (!int.TryParse(txtSemilla.Text, out int x0) ||
                 !int.TryParse(txtK.Text, out int k) ||
                 !int.TryParse(txtG.Text, out int g))
@@ -63,14 +73,14 @@ namespace Numeros_Pseudoaleatorios
             int a1 = 3 + 8 * k;
             int a2 = 5 + 8 * k;
 
-            int periodo1 = GenerarSecuencia(dgvResultadosA3, x0, a1, m);
-            int periodo2 = GenerarSecuencia(dgvResultadosA5, x0, a2, m);
+            int periodo1 = GenerarSecuencia(dgvResultadosA3, x0, a1, m, listaA3);
+            int periodo2 = GenerarSecuencia(dgvResultadosA5, x0, a2, m, listaA5);
 
             txtPeriodo1.Text = periodo1.ToString();
             txtPeriodo2.Text = periodo2.ToString();
         }
 
-        private int GenerarSecuencia(DataGridView dgv, int x0, int a, int m)
+        private int GenerarSecuencia(DataGridView dgv, int x0, int a, int m, List<double> lista)
         {
             int xi = x0;
             int i = 0;
@@ -89,6 +99,11 @@ namespace Numeros_Pseudoaleatorios
                     riTruncado.ToString("0.0000")
                 );
 
+                // ====================================
+                // GUARDAR ri PARA PRUEBAS
+                // ====================================
+                lista.Add(riTruncado);
+
                 valores.Add(xi);
 
                 xi = (a * xi) % m;
@@ -99,6 +114,44 @@ namespace Numeros_Pseudoaleatorios
             } while (!valores.Contains(xi));
 
             return periodo;
+        }
+
+        // ====================================
+        // BOTÓN EJECUTAR PRUEBAS
+        // ====================================
+        private void btnPruebas3_Click(object sender, EventArgs e)
+        {
+            if (listaA3.Count == 0 || listaA5.Count == 0)
+            {
+                MessageBox.Show("Primero genere las secuencias.");
+                return;
+            }
+
+            // Aquí se analiza la secuencia A3:
+
+            lblMedias.Text = PruebasEstadisticas.Medios(listaA3);
+            lblVarianza.Text = PruebasEstadisticas.Varianza(listaA3);
+            lblFrecuencia.Text = PruebasEstadisticas.Frecuencia(listaA3);
+            lblSeries.Text = PruebasEstadisticas.Series(listaA3);
+            lblCorridas.Text = PruebasEstadisticas.Corridas(listaA3);
+            lblPoker.Text = PruebasEstadisticas.Poker(listaA3);
+        }
+        private void btnPruebas5_Click(object sender, EventArgs e)
+        {
+            if (listaA3.Count == 0 || listaA5.Count == 0)
+            {
+                MessageBox.Show("Primero genere las secuencias.");
+                return;
+            }
+
+            // Aquí se analiza la secuencia A5:
+
+            lblMedias.Text = PruebasEstadisticas.Medios(listaA5);
+            lblVarianza.Text = PruebasEstadisticas.Varianza(listaA5);
+            lblFrecuencia.Text = PruebasEstadisticas.Frecuencia(listaA5);
+            lblSeries.Text = PruebasEstadisticas.Series(listaA5);
+            lblCorridas.Text = PruebasEstadisticas.Corridas(listaA5);
+            lblPoker.Text = PruebasEstadisticas.Poker(listaA5);
         }
     }
 }

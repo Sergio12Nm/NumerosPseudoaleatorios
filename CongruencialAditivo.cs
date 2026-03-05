@@ -12,6 +12,11 @@ namespace Numeros_Pseudoaleatorios
 {
     public partial class CongruencialAditivo : Form
     {
+        // ====================================
+        // LISTA PARA PRUEBAS ESTADÍSTICAS
+        // ====================================
+        List<double> listaNumeros = new List<double>();
+
         public CongruencialAditivo()
         {
             InitializeComponent();
@@ -21,18 +26,20 @@ namespace Numeros_Pseudoaleatorios
         {
             dgvResultados.Rows.Clear();
 
+            // LIMPIAR LISTA
+            listaNumeros.Clear();
+
             dgvResultados.Columns.Add("colXi", "Xi");
             dgvResultados.Columns.Add("colValor", "Valor Xi");
             dgvResultados.Columns.Add("colRi", "ri");
 
             dgvResultados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            int n = 5;               // Cantidad de semillas
-            int cantidadGenerar = 30; // Cantidad de números a generar
+            int n = 5;
+            int cantidadGenerar = 30;
 
             List<int> lista = new List<int>();
 
-            // Validar semillas
             if (!int.TryParse(txtSemilla1.Text, out int x1) ||
                 !int.TryParse(txtSemilla2.Text, out int x2) ||
                 !int.TryParse(txtSemilla3.Text, out int x3) ||
@@ -43,21 +50,18 @@ namespace Numeros_Pseudoaleatorios
                 return;
             }
 
-            // Validar módulo
             if (!int.TryParse(txtModulo.Text, out int m) || m <= 1)
             {
                 MessageBox.Show("Ingrese un módulo válido (mayor que 1).");
                 return;
             }
 
-            // Agregar semillas iniciales
             lista.Add(x1);
             lista.Add(x2);
             lista.Add(x3);
             lista.Add(x4);
             lista.Add(x5);
 
-            // Generar números
             for (int i = n; i < n + cantidadGenerar; i++)
             {
                 int xi_1 = lista[i - 1];
@@ -67,7 +71,6 @@ namespace Numeros_Pseudoaleatorios
 
                 lista.Add(nuevo);
 
-                // double ri = (double)nuevo / (m - 1);
                 double riExacto = (double)nuevo / (m - 1);
                 double riTruncado = Math.Truncate(riExacto * 10000) / 10000;
 
@@ -76,7 +79,31 @@ namespace Numeros_Pseudoaleatorios
                     nuevo.ToString("D2"),
                     riTruncado.ToString("0.0000")
                 );
+
+                // ====================================
+                // GUARDAR ri PARA PRUEBAS
+                // ====================================
+                listaNumeros.Add(riTruncado);
             }
+        }
+
+        // ====================================
+        // BOTÓN EJECUTAR PRUEBAS
+        // ====================================
+        private void btnPruebas_Click(object sender, EventArgs e)
+        {
+            if (listaNumeros.Count == 0)
+            {
+                MessageBox.Show("Primero genere números.");
+                return;
+            }
+
+            lblMedias.Text = PruebasEstadisticas.Medios(listaNumeros);
+            lblVarianza.Text = PruebasEstadisticas.Varianza(listaNumeros);
+            lblFrecuencia.Text = PruebasEstadisticas.Frecuencia(listaNumeros);
+            lblSeries.Text = PruebasEstadisticas.Series(listaNumeros);
+            lblCorridas.Text = PruebasEstadisticas.Corridas(listaNumeros);
+            lblPoker.Text = PruebasEstadisticas.Poker(listaNumeros);
         }
     }
 }

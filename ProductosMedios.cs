@@ -12,6 +12,11 @@ namespace Numeros_Pseudoaleatorios
 {
     public partial class ProductosMedios : Form
     {
+        // ====================================
+        // LISTA PARA PRUEBAS ESTADÍSTICAS
+        // ====================================
+        List<double> listaNumeros = new List<double>();
+
         public ProductosMedios()
         {
             InitializeComponent();
@@ -25,6 +30,9 @@ namespace Numeros_Pseudoaleatorios
 
             dgvResultados.Rows.Clear();
             dgvResultados.Columns.Clear();
+
+            // LIMPIAR LISTA
+            listaNumeros.Clear();
 
             dgvResultados.Columns.Add("Iteracion", "Iteración");
             dgvResultados.Columns.Add("Semilla1", "Semilla 1");
@@ -55,6 +63,12 @@ namespace Numeros_Pseudoaleatorios
 
                 dgvResultados.Rows.Add(i, semilla1, semilla2, productoStr, centralStr);
 
+                // ====================================
+                // CALCULAR ri Y GUARDARLO
+                // ====================================
+                double ri = central / 10000.0;
+                listaNumeros.Add(ri);
+
                 // Actualizar semillas
                 semilla1 = semilla2;
                 semilla2 = central;
@@ -62,6 +76,25 @@ namespace Numeros_Pseudoaleatorios
                 if (semilla2 == 0)
                     break;
             }
+        }
+
+        // ====================================
+        // BOTÓN EJECUTAR PRUEBAS
+        // ====================================
+        private void btnPruebas_Click(object sender, EventArgs e)
+        {
+            if (listaNumeros.Count == 0)
+            {
+                MessageBox.Show("Primero genere números.");
+                return;
+            }
+
+            lblMedias.Text = PruebasEstadisticas.Medios(listaNumeros);
+            lblVarianza.Text = PruebasEstadisticas.Varianza(listaNumeros);
+            lblFrecuencia.Text = PruebasEstadisticas.Frecuencia(listaNumeros);
+            lblSeries.Text = PruebasEstadisticas.Series(listaNumeros);
+            lblCorridas.Text = PruebasEstadisticas.Corridas(listaNumeros);
+            lblPoker.Text = PruebasEstadisticas.Poker(listaNumeros);
         }
     }
 }

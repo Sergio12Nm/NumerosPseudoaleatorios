@@ -1,8 +1,8 @@
 namespace Numeros_Pseudoaleatorios
 {
-    public partial class Form1 : Form
+    public partial class Numeros : Form
     {
-        public Form1()
+        public Numeros()
         {
             InitializeComponent();
         }

@@ -12,6 +12,11 @@ namespace Numeros_Pseudoaleatorios
 {
     public partial class CuadradosMedios : Form
     {
+        // ================================
+        // PASO 1: LISTA PARA LAS PRUEBAS
+        // ================================
+        List<double> listaNumeros = new List<double>();
+
         public CuadradosMedios()
         {
             InitializeComponent();
@@ -19,6 +24,8 @@ namespace Numeros_Pseudoaleatorios
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+            // ❌ ELIMINADA la lista local que estaba aquí
+
             if (string.IsNullOrWhiteSpace(txtSemilla.Text))
             {
                 MessageBox.Show("Ingrese una semilla de 4 dígitos.");
@@ -32,15 +39,12 @@ namespace Numeros_Pseudoaleatorios
                 MessageBox.Show("La semilla debe contener solo números.");
                 return;
             }
-            /*
-            if (semillaActual.Length != 4)
-            {
-                MessageBox.Show("La semilla debe tener exactamente 4 dígitos.");
-                return;
-            }*/
 
             dgvResultados.Columns.Clear();
             dgvResultados.Rows.Clear();
+
+            // LIMPIAR LISTA GLOBAL
+            listaNumeros.Clear();
 
             dgvResultados.Columns.Add("Iteracion", "Iteración");
             dgvResultados.Columns.Add("Semilla", "Semilla");
@@ -54,20 +58,17 @@ namespace Numeros_Pseudoaleatorios
 
                 string cuadradoTexto = cuadradoEntero.ToString();
 
-                // 🔥 Si es impar, agregar un cero
                 if (cuadradoTexto.Length % 2 != 0)
                 {
                     cuadradoTexto = "0" + cuadradoTexto;
                 }
 
-                // 🔥 Si tiene menos de 4 cifras, rellenar hasta 4
                 if (cuadradoTexto.Length < 4)
                 {
                     cuadradoTexto = cuadradoTexto.PadLeft(4, '0');
                 }
 
                 int inicio = (cuadradoTexto.Length - 4) / 2;
-
                 string numeroCentral = cuadradoTexto.Substring(inicio, 4);
 
                 dgvResultados.Rows.Add(
@@ -77,8 +78,30 @@ namespace Numeros_Pseudoaleatorios
                     numeroCentral
                 );
 
+                // ===============================
+                // 🔥 CALCULAR ri Y GUARDARLO
+                // ===============================
+                double ri = int.Parse(numeroCentral) / 10000.0;
+                listaNumeros.Add(ri);
+
                 semillaActual = numeroCentral;
             }
+        }
+
+        private void btnPruebas_Click(object sender, EventArgs e)
+        {
+            if (listaNumeros.Count == 0)
+            {
+                MessageBox.Show("Primero genere números.");
+                return;
+            }
+
+            lblMedias.Text = PruebasEstadisticas.Medios(listaNumeros);
+            lblVarianza.Text = PruebasEstadisticas.Varianza(listaNumeros);
+            lblFrecuencia.Text = PruebasEstadisticas.Frecuencia(listaNumeros);
+            lblSeries.Text = PruebasEstadisticas.Series(listaNumeros);
+            lblCorridas.Text = PruebasEstadisticas.Corridas(listaNumeros);
+            lblPoker.Text = PruebasEstadisticas.Poker(listaNumeros);
         }
     }
 }

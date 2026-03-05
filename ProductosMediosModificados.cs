@@ -12,6 +12,11 @@ namespace Numeros_Pseudoaleatorios
 {
     public partial class ProductosMediosModificados : Form
     {
+        // ====================================
+        // LISTA PARA PRUEBAS ESTADÍSTICAS
+        // ====================================
+        List<double> listaNumeros = new List<double>();
+
         public ProductosMediosModificados()
         {
             InitializeComponent();
@@ -23,6 +28,9 @@ namespace Numeros_Pseudoaleatorios
             dgvResultados.Columns.Clear();
             dgvResultados.Rows.Clear();
 
+            // LIMPIAR LISTA
+            listaNumeros.Clear();
+
             dgvResultados.Columns.Add("Iteracion", "Iteración");
             dgvResultados.Columns.Add("K", "K");
             dgvResultados.Columns.Add("Xn", "Xn");
@@ -30,10 +38,8 @@ namespace Numeros_Pseudoaleatorios
             dgvResultados.Columns.Add("Centro", "Centro");
             dgvResultados.Columns.Add("R", "R");
 
-            // Quitar autoajuste para usar anchos fijos OPCIONAL
             dgvResultados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
-            // Ajustar ancho manual para mejor visualización OPCIONAL
             dgvResultados.Columns["Iteracion"].Width = 85;
             dgvResultados.Columns["K"].Width = 85;
             dgvResultados.Columns["Xn"].Width = 85;
@@ -41,7 +47,6 @@ namespace Numeros_Pseudoaleatorios
             dgvResultados.Columns["Centro"].Width = 85;
             dgvResultados.Columns["R"].Width = 85;
 
-            // Centrar texto
             foreach (DataGridViewColumn col in dgvResultados.Columns)
             {
                 col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -74,10 +79,8 @@ namespace Numeros_Pseudoaleatorios
             {
                 int producto = K * Xn;
 
-                // Convertir a 4 dígitos con ceros a la izquierda
                 string productoStr = producto.ToString("D4");
 
-                // Tomar los 2 dígitos centrales
                 string centroStr = productoStr.Substring(1, 2);
 
                 int centro = int.Parse(centroStr);
@@ -93,9 +96,32 @@ namespace Numeros_Pseudoaleatorios
                     R.ToString("0.00")
                 );
 
-                // Actualizar semilla
+                // ====================================
+                // GUARDAR R PARA PRUEBAS
+                // ====================================
+                listaNumeros.Add(R);
+
                 Xn = centro;
             }
+        }
+
+        // ====================================
+        // BOTÓN EJECUTAR PRUEBAS
+        // ====================================
+        private void btnPruebas_Click(object sender, EventArgs e)
+        {
+            if (listaNumeros.Count == 0)
+            {
+                MessageBox.Show("Primero genere números.");
+                return;
+            }
+
+            lblMedias.Text = PruebasEstadisticas.Medios(listaNumeros);
+            lblVarianza.Text = PruebasEstadisticas.Varianza(listaNumeros);
+            lblFrecuencia.Text = PruebasEstadisticas.Frecuencia(listaNumeros);
+            lblSeries.Text = PruebasEstadisticas.Series(listaNumeros);
+            lblCorridas.Text = PruebasEstadisticas.Corridas(listaNumeros);
+            lblPoker.Text = PruebasEstadisticas.Poker(listaNumeros);
         }
     }
 }
