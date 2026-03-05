@@ -13,6 +13,9 @@
     <Compile Update="CuadradosMedios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GraficosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Numeros.cs">
       <SubType>Form</SubType>
     </Compile>

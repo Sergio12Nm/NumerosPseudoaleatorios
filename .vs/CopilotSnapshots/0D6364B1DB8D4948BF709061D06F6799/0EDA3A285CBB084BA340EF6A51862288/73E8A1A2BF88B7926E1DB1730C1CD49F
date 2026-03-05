@@ -1,0 +1,71 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+
+namespace Numeros_Pseudoaleatorios
+{
+    public class GraficosForm : Form
+    {
+        public GraficosForm(List<double> numeros, string titulo = "Gráficos")
+        {
+            this.Text = titulo;
+            this.Size = new Size(800, 600);
+
+            if (numeros == null) numeros = new List<double>();
+
+            var split = new SplitContainer();
+            split.Dock = DockStyle.Fill;
+            split.Orientation = Orientation.Horizontal;
+            split.SplitterDistance = ClientSize.Height / 2;
+            this.Controls.Add(split);
+
+            var chartLine = new Chart();
+            chartLine.Dock = DockStyle.Fill;
+            chartLine.ChartAreas.Add(new ChartArea("Default"));
+            chartLine.Legends.Add(new Legend("L1"));
+            var serLine = new Series("Secuencia") { ChartType = SeriesChartType.Line, BorderWidth = 2 };
+
+            for (int i = 0; i < numeros.Count; i++)
+            {
+                serLine.Points.AddXY(i + 1, numeros[i]);
+            }
+
+            chartLine.Series.Add(serLine);
+            chartLine.ChartAreas[0].AxisX.Title = "Índice";
+            chartLine.ChartAreas[0].AxisY.Title = "Valor";
+
+            var chartHist = new Chart();
+            chartHist.Dock = DockStyle.Fill;
+            chartHist.ChartAreas.Add(new ChartArea("H"));
+            chartHist.Legends.Add(new Legend("L2"));
+            var serHist = new Series("Histograma") { ChartType = SeriesChartType.Column };
+
+            // Construir histograma en 10 intervalos (0..1)
+            int bins = 10;
+            int[] counts = new int[bins];
+            foreach (var v in numeros)
+            {
+                int idx = (int)(v * bins);
+                if (idx == bins) idx = bins - 1;
+                if (idx >= 0 && idx < bins) counts[idx]++;
+            }
+
+            for (int i = 0; i < bins; i++)
+            {
+                double start = (double)i / bins;
+                double end = (double)(i + 1) / bins;
+                serHist.Points.AddXY($"{start:0.0}-{end:0.0}", counts[i]);
+            }
+
+            chartHist.Series.Add(serHist);
+            chartHist.ChartAreas[0].AxisX.Title = "Intervalo";
+            chartHist.ChartAreas[0].AxisY.Title = "Frecuencia";
+
+            split.Panel1.Controls.Add(chartLine);
+            split.Panel2.Controls.Add(chartHist);
+        }
+    }
+}

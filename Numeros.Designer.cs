@@ -155,7 +155,7 @@
             btnMontecarlo.UseVisualStyleBackColor = false;
             btnMontecarlo.Click += btnMontecarlo_Click;
             // 
-            // Form1
+            // Numeros
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -170,7 +170,7 @@
             Controls.Add(btnProductosMediosModificados);
             Controls.Add(btnProductosMedios);
             Controls.Add(btnCuadradosMedios);
-            Name = "Form1";
+            Name = "Numeros";
             Text = "Números";
             ResumeLayout(false);
             PerformLayout();

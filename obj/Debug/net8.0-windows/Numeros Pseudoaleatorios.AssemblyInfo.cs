@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Numeros Pseudoaleatorios")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f9d1e9399763b28d6ebfbeaa9e6e48590171ca0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c6b74edf821676bc140651106e27fc0e9d4d731")]
 [assembly: System.Reflection.AssemblyProductAttribute("Numeros Pseudoaleatorios")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Numeros Pseudoaleatorios")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

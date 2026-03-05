@@ -1,0 +1,163 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Numeros_Pseudoaleatorios
+{
+    public partial class Montecarlo : Form
+    {
+        // ====================================
+        // LISTA PARA PRUEBAS ESTADÍSTICAS
+        // ====================================
+        List<double> listaNumeros = new List<double>();
+
+        public Montecarlo()
+        {
+            InitializeComponent();
+            dgvResultados.Columns.Clear();
+            dgvResultados.Columns.Add("Iteracion", "Iteración");
+            dgvResultados.Columns.Add("Monedas", "Resultado Monedas");
+            dgvResultados.Columns.Add("Dados", "Resultado Dados");
+
+            dgvResultados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            dgvResultados.Rows.Clear();
+
+            // LIMPIAR LISTA
+            listaNumeros.Clear();
+
+            if (!int.TryParse(txtMonedas.Text, out int numMonedas) ||
+                !int.TryParse(txtDados.Text, out int numDados))
+            {
+                MessageBox.Show("Ingrese valores numéricos válidos");
+                return;
+            }
+
+            Random rnd = new Random();
+
+            int totalCaras = 0;
+            int totalCruces = 0;
+
+            int[] frecuenciaDados = new int[6];
+
+            for (int i = 1; i <= 30; i++)
+            {
+                string resultadoMonedas = "";
+                string resultadoDados = "";
+
+                // 🪙 Monedas
+                for (int m = 0; m < numMonedas; m++)
+                {
+                    double ri = rnd.NextDouble();
+
+                    // GUARDAR ri
+                    listaNumeros.Add(ri);
+
+                    if (ri <= 0.499)
+                    {
+                        resultadoMonedas += "C ";
+                        totalCaras++;
+                    }
+                    else
+                    {
+                        resultadoMonedas += "X ";
+                        totalCruces++;
+                    }
+                }
+
+                // 🎲 Dados
+                for (int d = 0; d < numDados; d++)
+                {
+                    double ri = rnd.NextDouble();
+
+                    // GUARDAR ri
+                    listaNumeros.Add(ri);
+
+                    int caraDado = (int)(ri * 6) + 1;
+
+                    resultadoDados += caraDado + " ";
+                    frecuenciaDados[caraDado - 1]++;
+                }
+
+                dgvResultados.Rows.Add(i, resultadoMonedas, resultadoDados);
+            }
+
+            // =========================
+            // TU RESUMEN ORIGINAL
+            // =========================
+
+            int totalMonedas = totalCaras + totalCruces;
+            int totalDados = frecuenciaDados.Sum();
+
+            string resumen = "MONEDAS\n";
+            resumen += "Evento   Freq   P(exp)   P(teo)   Error\n";
+
+            double pTeoMoneda = 0.5;
+
+            double pExpCara = (double)totalCaras / totalMonedas;
+            double errorCara = Math.Abs(pExpCara - pTeoMoneda);
+
+            resumen += $"Cara     {totalCaras,4}   {pExpCara:0.000}    0.500    {errorCara:0.000}\n";
+
+            double pExpCruz = (double)totalCruces / totalMonedas;
+            double errorCruz = Math.Abs(pExpCruz - pTeoMoneda);
+
+            resumen += $"Cruz     {totalCruces,4}   {pExpCruz:0.000}    0.500    {errorCruz:0.000}\n\n";
+
+            resumen += "DADOS\n";
+            resumen += "Cara   Freq   P(exp)   P(teo)   Error\n";
+
+            double pTeoDado = 1.0 / 6.0;
+
+            for (int i = 0; i < 6; i++)
+            {
+                double pExp = (double)frecuenciaDados[i] / totalDados;
+                double error = Math.Abs(pExp - pTeoDado);
+
+                resumen += $"{i + 1}      {frecuenciaDados[i],4}   {pExp:0.000}    {pTeoDado:0.000}    {error:0.000}\n";
+            }
+
+            lblResumen.Text = resumen;
+        }
+
+        // ====================================
+        // BOTÓN EJECUTAR PRUEBAS
+        // ====================================
+        private void btnPruebas_Click(object sender, EventArgs e)
+        {
+            if (listaNumeros.Count == 0)
+            {
+                MessageBox.Show("Primero ejecute la simulación.");
+                return;
+            }
+
+            lblMedias.Text = PruebasEstadisticas.Medios(listaNumeros);
+            lblVarianza.Text = PruebasEstadisticas.Varianza(listaNumeros);
+            lblFrecuencia.Text = PruebasEstadisticas.Frecuencia(listaNumeros);
+            lblSeries.Text = PruebasEstadisticas.Series(listaNumeros);
+            lblCorridas.Text = PruebasEstadisticas.Corridas(listaNumeros);
+            lblPoker.Text = PruebasEstadisticas.Poker(listaNumeros);
+        }
+
+        private void btnGraficos_Click(object sender, EventArgs e)
+        {
+            if (listaNumeros == null || listaNumeros.Count == 0)
+            {
+                MessageBox.Show("Primero ejecute la simulación.");
+                return;
+            }
+
+            var f = new GraficosForm(listaNumeros, "Gráficos - Montecarlo");
+            f.ShowDialog(this);
+        }
+    }
+}}
