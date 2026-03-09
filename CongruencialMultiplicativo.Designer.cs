@@ -314,21 +314,21 @@
             // 
             btnGraficosA3.Location = new Point(12, 12);
             btnGraficosA3.Name = "btnGraficosA3";
-            btnGraficosA3.Size = new Size(75, 23);
+            btnGraficosA3.Size = new Size(75, 25);
             btnGraficosA3.TabIndex = 10;
             btnGraficosA3.Text = "Gráf A3";
             btnGraficosA3.UseVisualStyleBackColor = true;
-            btnGraficosA3.Click += new System.EventHandler(btnGraficosA3_Click);
+            btnGraficosA3.Click += btnGraficosA3_Click;
             // 
             // btnGraficosA5
             // 
             btnGraficosA5.Location = new Point(100, 12);
             btnGraficosA5.Name = "btnGraficosA5";
-            btnGraficosA5.Size = new Size(75, 23);
+            btnGraficosA5.Size = new Size(75, 25);
             btnGraficosA5.TabIndex = 11;
             btnGraficosA5.Text = "Gráf A5";
             btnGraficosA5.UseVisualStyleBackColor = true;
-            btnGraficosA5.Click += new System.EventHandler(btnGraficosA5_Click);
+            btnGraficosA5.Click += btnGraficosA5_Click;
             // 
             // CongruencialMultiplicativo
             // 

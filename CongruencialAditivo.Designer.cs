@@ -1,4 +1,4 @@
-ï»¿namespace Numeros_Pseudoaleatorios
+namespace Numeros_Pseudoaleatorios
 {
     partial class CongruencialAditivo
     {
@@ -51,6 +51,7 @@
             lblFrecuencia = new Label();
             lblVarianza = new Label();
             lblMedias = new Label();
+            btnGraficos = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvResultados).BeginInit();
             grpPruebas.SuspendLayout();
             SuspendLayout();
@@ -70,11 +71,11 @@
             label4.Name = "label4";
             label4.Size = new Size(61, 20);
             label4.TabIndex = 28;
-            label4.Text = "MÃ³dulo";
+            label4.Text = "Módulo";
             // 
             // txtSemilla2
             // 
-            txtSemilla2.Location = new Point(227, 108);
+            txtSemilla2.Location = new Point(243, 107);
             txtSemilla2.Name = "txtSemilla2";
             txtSemilla2.Size = new Size(150, 27);
             txtSemilla2.TabIndex = 27;
@@ -83,7 +84,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.White;
-            label3.Location = new Point(29, 111);
+            label3.Location = new Point(45, 110);
             label3.Name = "label3";
             label3.Size = new Size(120, 20);
             label3.TabIndex = 26;
@@ -113,7 +114,7 @@
             // 
             // txtSemilla1
             // 
-            txtSemilla1.Location = new Point(227, 75);
+            txtSemilla1.Location = new Point(243, 74);
             txtSemilla1.Name = "txtSemilla1";
             txtSemilla1.Size = new Size(150, 27);
             txtSemilla1.TabIndex = 23;
@@ -122,7 +123,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(29, 78);
+            label2.Location = new Point(45, 77);
             label2.Name = "label2";
             label2.Size = new Size(120, 20);
             label2.TabIndex = 22;
@@ -133,15 +134,15 @@
             label1.AutoSize = true;
             label1.Font = new Font("Pusab", 19.7999973F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(237, 20);
+            label1.Location = new Point(253, 19);
             label1.Name = "label1";
             label1.Size = new Size(530, 36);
             label1.TabIndex = 21;
-            label1.Text = "MÃ©todo Congruencial Aditivo";
+            label1.Text = "Método Congruencial Aditivo";
             // 
             // txtSemilla3
             // 
-            txtSemilla3.Location = new Point(227, 141);
+            txtSemilla3.Location = new Point(243, 140);
             txtSemilla3.Name = "txtSemilla3";
             txtSemilla3.Size = new Size(150, 27);
             txtSemilla3.TabIndex = 31;
@@ -150,7 +151,7 @@
             // 
             label5.AutoSize = true;
             label5.ForeColor = Color.White;
-            label5.Location = new Point(29, 144);
+            label5.Location = new Point(45, 143);
             label5.Name = "label5";
             label5.Size = new Size(120, 20);
             label5.TabIndex = 30;
@@ -158,7 +159,7 @@
             // 
             // txtSemilla4
             // 
-            txtSemilla4.Location = new Point(227, 174);
+            txtSemilla4.Location = new Point(243, 173);
             txtSemilla4.Name = "txtSemilla4";
             txtSemilla4.Size = new Size(150, 27);
             txtSemilla4.TabIndex = 33;
@@ -167,7 +168,7 @@
             // 
             label6.AutoSize = true;
             label6.ForeColor = Color.White;
-            label6.Location = new Point(29, 177);
+            label6.Location = new Point(45, 176);
             label6.Name = "label6";
             label6.Size = new Size(120, 20);
             label6.TabIndex = 32;
@@ -175,7 +176,7 @@
             // 
             // txtSemilla5
             // 
-            txtSemilla5.Location = new Point(227, 207);
+            txtSemilla5.Location = new Point(243, 206);
             txtSemilla5.Name = "txtSemilla5";
             txtSemilla5.Size = new Size(150, 27);
             txtSemilla5.TabIndex = 35;
@@ -184,7 +185,7 @@
             // 
             label7.AutoSize = true;
             label7.ForeColor = Color.White;
-            label7.Location = new Point(29, 210);
+            label7.Location = new Point(45, 209);
             label7.Name = "label7";
             label7.Size = new Size(120, 20);
             label7.TabIndex = 34;
@@ -273,12 +274,23 @@
             lblMedias.TabIndex = 0;
             lblMedias.Text = "Medias";
             // 
+            // btnGraficos
+            // 
+            btnGraficos.Location = new Point(12, 12);
+            btnGraficos.Name = "btnGraficos";
+            btnGraficos.Size = new Size(80, 30);
+            btnGraficos.TabIndex = 37;
+            btnGraficos.Text = "Gráficos";
+            btnGraficos.UseVisualStyleBackColor = true;
+            btnGraficos.Click += btnGraficos_Click;
+            // 
             // CongruencialAditivo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1012, 603);
+            Controls.Add(btnGraficos);
             Controls.Add(grpPruebas);
             Controls.Add(txtSemilla5);
             Controls.Add(label7);
@@ -329,5 +341,6 @@
         private Label lblFrecuencia;
         private Label lblVarianza;
         private Label lblMedias;
+        private Button btnGraficos;
     }
 }

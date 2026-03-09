@@ -1,6 +1,6 @@
 ﻿namespace Numeros_Pseudoaleatorios
 {
-    partial class ProductosMedios
+    partial class CongruencialAditivo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            txtModulo = new TextBox();
+            label4 = new Label();
+            txtSemilla2 = new TextBox();
+            label3 = new Label();
             dgvResultados = new DataGridView();
             btnGenerar = new Button();
             txtSemilla1 = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            txtSemilla2 = new TextBox();
-            label3 = new Label();
+            txtSemilla3 = new TextBox();
+            label5 = new Label();
+            txtSemilla4 = new TextBox();
+            label6 = new Label();
+            txtSemilla5 = new TextBox();
+            label7 = new Label();
             grpPruebas = new GroupBox();
             btnPruebas = new Button();
             lblPoker = new Label();
@@ -43,77 +51,144 @@
             lblFrecuencia = new Label();
             lblVarianza = new Label();
             lblMedias = new Label();
-            btnGraficos = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvResultados).BeginInit();
             grpPruebas.SuspendLayout();
             SuspendLayout();
             // 
+            // txtModulo
+            // 
+            txtModulo.Location = new Point(430, 197);
+            txtModulo.Name = "txtModulo";
+            txtModulo.Size = new Size(150, 27);
+            txtModulo.TabIndex = 29;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(472, 174);
+            label4.Name = "label4";
+            label4.Size = new Size(61, 20);
+            label4.TabIndex = 28;
+            label4.Text = "Módulo";
+            // 
+            // txtSemilla2
+            // 
+            txtSemilla2.Location = new Point(243, 107);
+            txtSemilla2.Name = "txtSemilla2";
+            txtSemilla2.Size = new Size(150, 27);
+            txtSemilla2.TabIndex = 27;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(45, 110);
+            label3.Name = "label3";
+            label3.Size = new Size(120, 20);
+            label3.TabIndex = 26;
+            label3.Text = "Ingrese semilla 2";
+            // 
             // dgvResultados
             // 
             dgvResultados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvResultados.Location = new Point(28, 156);
+            dgvResultados.Location = new Point(29, 253);
             dgvResultados.Name = "dgvResultados";
             dgvResultados.RowHeadersWidth = 51;
-            dgvResultados.Size = new Size(583, 435);
-            dgvResultados.TabIndex = 9;
+            dgvResultados.Size = new Size(582, 338);
+            dgvResultados.TabIndex = 25;
             // 
             // btnGenerar
             // 
             btnGenerar.BackColor = Color.MediumSeaGreen;
             btnGenerar.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGenerar.ForeColor = Color.White;
-            btnGenerar.Location = new Point(430, 80);
+            btnGenerar.Location = new Point(433, 93);
             btnGenerar.Name = "btnGenerar";
             btnGenerar.Size = new Size(137, 56);
-            btnGenerar.TabIndex = 8;
+            btnGenerar.TabIndex = 24;
             btnGenerar.Text = "Generar";
             btnGenerar.UseVisualStyleBackColor = false;
             btnGenerar.Click += btnGenerar_Click;
             // 
             // txtSemilla1
             // 
-            txtSemilla1.Location = new Point(226, 76);
+            txtSemilla1.Location = new Point(243, 74);
             txtSemilla1.Name = "txtSemilla1";
             txtSemilla1.Size = new Size(150, 27);
-            txtSemilla1.TabIndex = 7;
+            txtSemilla1.TabIndex = 23;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.White;
-            label2.Location = new Point(28, 79);
+            label2.Location = new Point(45, 77);
             label2.Name = "label2";
-            label2.Size = new Size(192, 20);
-            label2.TabIndex = 6;
-            label2.Text = "Ingrese semilla 1 (4 dígitos)";
+            label2.Size = new Size(120, 20);
+            label2.TabIndex = 22;
+            label2.Text = "Ingrese semilla 1";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Pusab", 19.7999973F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(248, 20);
+            label1.Location = new Point(253, 19);
             label1.Name = "label1";
-            label1.Size = new Size(517, 36);
-            label1.TabIndex = 5;
-            label1.Text = "Método de Productos Medios";
+            label1.Size = new Size(530, 36);
+            label1.TabIndex = 21;
+            label1.Text = "Método Congruencial Aditivo";
             // 
-            // txtSemilla2
+            // txtSemilla3
             // 
-            txtSemilla2.Location = new Point(226, 109);
-            txtSemilla2.Name = "txtSemilla2";
-            txtSemilla2.Size = new Size(150, 27);
-            txtSemilla2.TabIndex = 11;
+            txtSemilla3.Location = new Point(243, 140);
+            txtSemilla3.Name = "txtSemilla3";
+            txtSemilla3.Size = new Size(150, 27);
+            txtSemilla3.TabIndex = 31;
             // 
-            // label3
+            // label5
             // 
-            label3.AutoSize = true;
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(28, 112);
-            label3.Name = "label3";
-            label3.Size = new Size(192, 20);
-            label3.TabIndex = 10;
-            label3.Text = "Ingrese semilla 2 (4 dígitos)";
+            label5.AutoSize = true;
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(45, 143);
+            label5.Name = "label5";
+            label5.Size = new Size(120, 20);
+            label5.TabIndex = 30;
+            label5.Text = "Ingrese semilla 3";
+            // 
+            // txtSemilla4
+            // 
+            txtSemilla4.Location = new Point(243, 173);
+            txtSemilla4.Name = "txtSemilla4";
+            txtSemilla4.Size = new Size(150, 27);
+            txtSemilla4.TabIndex = 33;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(45, 176);
+            label6.Name = "label6";
+            label6.Size = new Size(120, 20);
+            label6.TabIndex = 32;
+            label6.Text = "Ingrese semilla 4";
+            // 
+            // txtSemilla5
+            // 
+            txtSemilla5.Location = new Point(243, 206);
+            txtSemilla5.Name = "txtSemilla5";
+            txtSemilla5.Size = new Size(150, 27);
+            txtSemilla5.TabIndex = 35;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.White;
+            label7.Location = new Point(45, 209);
+            label7.Name = "label7";
+            label7.Size = new Size(120, 20);
+            label7.TabIndex = 34;
+            label7.Text = "Ingrese semilla 5";
             // 
             // grpPruebas
             // 
@@ -128,7 +203,7 @@
             grpPruebas.Location = new Point(617, 71);
             grpPruebas.Name = "grpPruebas";
             grpPruebas.Size = new Size(383, 520);
-            grpPruebas.TabIndex = 12;
+            grpPruebas.TabIndex = 36;
             grpPruebas.TabStop = false;
             grpPruebas.Text = "Pruebas";
             // 
@@ -198,23 +273,21 @@
             lblMedias.TabIndex = 0;
             lblMedias.Text = "Medias";
             // 
-            // btnGraficos
-            // 
-            btnGraficos.Location = new Point(12, 12);
-            btnGraficos.Name = "btnGraficos";
-            btnGraficos.Size = new Size(75, 25);
-            btnGraficos.TabIndex = 10;
-            btnGraficos.Text = "Gráficos";
-            btnGraficos.UseVisualStyleBackColor = true;
-            btnGraficos.Click += btnGraficos_Click;
-            // 
-            // ProductosMedios
+            // CongruencialAditivo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             ClientSize = new Size(1012, 603);
             Controls.Add(grpPruebas);
+            Controls.Add(txtSemilla5);
+            Controls.Add(label7);
+            Controls.Add(txtSemilla4);
+            Controls.Add(label6);
+            Controls.Add(txtSemilla3);
+            Controls.Add(label5);
+            Controls.Add(txtModulo);
+            Controls.Add(label4);
             Controls.Add(txtSemilla2);
             Controls.Add(label3);
             Controls.Add(dgvResultados);
@@ -222,9 +295,8 @@
             Controls.Add(txtSemilla1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(btnGraficos);
-            Name = "ProductosMedios";
-            Text = "ProductosMedios";
+            Name = "CongruencialAditivo";
+            Text = "CongruencialAditivo";
             ((System.ComponentModel.ISupportInitialize)dgvResultados).EndInit();
             grpPruebas.ResumeLayout(false);
             grpPruebas.PerformLayout();
@@ -234,13 +306,21 @@
 
         #endregion
 
+        private TextBox txtModulo;
+        private Label label4;
+        private TextBox txtSemilla2;
+        private Label label3;
         private DataGridView dgvResultados;
         private Button btnGenerar;
         private TextBox txtSemilla1;
         private Label label2;
         private Label label1;
-        private TextBox txtSemilla2;
-        private Label label3;
+        private TextBox txtSemilla3;
+        private Label label5;
+        private TextBox txtSemilla4;
+        private Label label6;
+        private TextBox txtSemilla5;
+        private Label label7;
         private GroupBox grpPruebas;
         private Button btnPruebas;
         private Label lblPoker;
@@ -249,6 +329,5 @@
         private Label lblFrecuencia;
         private Label lblVarianza;
         private Label lblMedias;
-        private Button btnGraficos;
     }
 }

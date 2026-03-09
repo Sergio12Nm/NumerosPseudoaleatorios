@@ -226,7 +226,7 @@
             // 
             btnGraficos.Location = new Point(12, 12);
             btnGraficos.Name = "btnGraficos";
-            btnGraficos.Size = new Size(75, 23);
+            btnGraficos.Size = new Size(75, 25);
             btnGraficos.TabIndex = 10;
             btnGraficos.Text = "Gráficos";
             btnGraficos.UseVisualStyleBackColor = true;
